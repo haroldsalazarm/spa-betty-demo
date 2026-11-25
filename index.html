@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salud & Belleza SPA BETTY — Plataforma Comercial & CRM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- TOP PRESENTATION BAR (SALES DEMO SWITCHER) -->
+  <div class="demo-topbar" role="banner">
+    <div class="demo-topbar-inner">
+      <div class="demo-brand-pill">
+        <span class="pulse-dot"></span>
+        <span class="demo-label-strong">PROTOTIPO INTERACTIVO</span>
+        <span class="demo-sep">·</span>
+        <span class="demo-label-sub">Salud &amp; Belleza SPA BETTY</span>
+      </div>
+
+      <nav class="mode-switcher" aria-label="Cambiar vista del sistema">
+        <button class="mode-btn active" data-mode="web" id="tab-mode-web">
+          <i data-lucide="globe"></i>
+          <span>Sitio Web &amp; Tienda</span>
+        </button>
+        <button class="mode-btn" data-mode="crm" id="tab-mode-crm">
+          <i data-lucide="layout-dashboard"></i>
+          <span>Sistema CRM &amp; Caja</span>
+          <span class="live-badge" id="crm-sync-badge" hidden>0</span>
+        </button>
+        <button class="mode-btn" data-mode="brand" id="tab-mode-brand">
+          <i data-lucide="sparkles"></i>
+          <span>Propuesta de Marca</span>
+        </button>
+      </nav>
+
+      <div class="demo-actions">
+        <button class="demo-reset-btn" id="btn-reset-demo" title="Restaurar datos iniciales de la demostración">
+          <i data-lucide="rotate-ccw"></i>
+          <span>Reiniciar Demo</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODE 1: PUBLIC COMMERCIAL WEBSITE & ONLINE STORE
+  ========================================================= -->
+  <div id="view-web" class="app-view active">
+    <!-- Public Header -->
+    <header class="site-header">
+      <div class="container site-header-inner">
+        <a href="#inicio" class="site-logo">
+          <img src="assets/logo-spa-betty.jpg" alt="Logo Salud y Belleza Spa Betty" class="site-logo-img" />
+          <div class="site-logo-text">
+            <strong>SPA BETTY</strong>
+            <span>SALUD &amp; BELLEZA INTEGRAL</span>
+          </div>
+        </a>
+
+        <nav class="site-nav" aria-label="Navegación principal">
+          <a href="#servicios">Servicios</a>
+          <a href="#promociones">Promociones</a>
+          <a href="#tienda">Tienda Online</a>
+          <a href="#sedes">Nuestras Cabinas</a>
+        </nav>
+
+        <div class="site-header-cta">
+          <button class="cart-trigger-btn" id="btn-open-cart" aria-label="Abrir carrito de compras">
+            <i data-lucide="shopping-bag"></i>
+            <span class="cart-count" id="header-cart-count">0</span>
+          </button>
+          <button class="btn btn-primary" id="btn-hero-book-top">
+            <i data-lucide="calendar-check"></i>
+            <span>Reservar Cita</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+      <div class="hero-bg">
+        <img src="assets/hero-spa.jpg" alt="Cabinas clínicas modernas Salud y Belleza Spa Betty" />
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <div class="hero-eyebrow">
+            <i data-lucide="map-pin"></i>
+            <span>C.C. Barrio Chino · Lima · 5 Cabinas Especializadas</span>
+          </div>
+          <h1>Bienestar clínico y estética avanzada en un solo lugar</h1>
+          <p class="hero-lead">
+            Especialistas en <strong>Podología Láser</strong>, <strong>Fisioterapia &amp; Quiropraxia</strong>,
+            <strong>Masajes de Descarga Muscular</strong> y <strong>Cosmiatría Estética</strong>.
+            Reserva tu cita en línea y paga fácil con Yape, Plin o tarjeta.
+          </p>
+          <div class="hero-cta-group">
+            <button class="btn btn-primary btn-lg" id="btn-hero-book">
+              <i data-lucide="calendar-plus"></i>
+              <span>Agendar Cita Online</span>
+            </button>
+            <a href="#tienda" class="btn btn-glass btn-lg">
+              <i data-lucide="shopping-bag"></i>
+              <span>Explorar Productos</span>
+            </a>
+          </div>
+
+          <div class="hero-trust-strip">
+            <div class="trust-item">
+              <strong>+5 años</strong>
+              <span>Cuidando tu salud</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <strong>S/ 0</strong>
+              <span>Evaluación podológica y física</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <strong>Lun – Dom</strong>
+              <span>10:00 a.m. a 8:00 p.m.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Interactive Booking Card right in Hero -->
+        <aside class="hero-quick-card">
+          <div class="quick-card-head">
+            <span class="badge-aqua">Reserva Instantánea</span>
+            <h3>Elige tu especialidad</h3>
+            <p>Confirmación automática directo a nuestra agenda</p>
+          </div>
+          <div class="quick-specialties">
+            <button class="quick-spec-item" data-quick-cat="podologia">
+              <div class="quick-spec-icon"><i data-lucide="footprints"></i></div>
+              <div>
+                <strong>Podología &amp; Láser</strong>
+                <span>Desde S/ 35 · Tda. 2015</span>
+              </div>
+              <i data-lucide="chevron-right" class="arrow-muted"></i>
+            </button>
+            <button class="quick-spec-item" data-quick-cat="masajes">
+              <div class="quick-spec-icon"><i data-lucide="activity"></i></div>
+              <div>
+                <strong>Fisio, Quiropraxia &amp; Masajes</strong>
+                <span>Desde S/ 30 · Tda. 2013 / 2100</span>
+              </div>
+              <i data-lucide="chevron-right" class="arrow-muted"></i>
+            </button>
+            <button class="quick-spec-item" data-quick-cat="cosmiatria">
+              <div class="quick-spec-icon"><i data-lucide="sparkles"></i></div>
+              <div>
+                <strong>Cosmiatría &amp; Faciales</strong>
+                <span>Desde S/ 50 · Tda. 2101</span>
+              </div>
+              <i data-lucide="chevron-right" class="arrow-muted"></i>
+            </button>
+            <button class="quick-spec-item" data-quick-cat="mirada">
+              <div class="quick-spec-icon"><i data-lucide="eye"></i></div>
+              <div>
+                <strong>Pestañas, Cejas &amp; Láser</strong>
+                <span>Desde S/ 25 · Tda. 3100</span>
+              </div>
+              <i data-lucide="chevron-right" class="arrow-muted"></i>
+            </button>
+          </div>
+          <div class="quick-pay-methods">
+            <span>Aceptamos pagos online:</span>
+            <div class="pay-pills">
+              <span class="pay-pill yape">Yape</span>
+              <span class="pay-pill plin">Plin</span>
+              <span class="pay-pill card">Visa / MC</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Pillars / Visual Showcase -->
+    <section class="pillars-section">
+      <div class="container">
+        <div class="pillars-grid">
+          <article class="pillar-card" data-filter-jump="podologia">
+            <img src="assets/service-podologia.jpg" alt="Podología Clínica y Láser" />
+            <div class="pillar-body">
+              <span class="pillar-tag">Tda. 2015 · Centro Podológico</span>
+              <h3>Podología Clínica &amp; Láser</h3>
+              <p>Onicomicosis, uñeros, pie diabético, ortonixia y profilaxis con tecnología láser y ozono.</p>
+            </div>
+          </article>
+          <article class="pillar-card" data-filter-jump="masajes">
+            <img src="assets/service-masajes.jpg" alt="Fisioterapia, Quiropraxia y Masajes" />
+            <div class="pillar-body">
+              <span class="pillar-tag">Tda. 2013 &amp; 2100 · Terapia Física</span>
+              <h3>Masajes, Fisio &amp; Quiropraxia</h3>
+              <p>Descarga muscular deportiva, ajuste vertebral, ventosas chinas, compresas y electroterapia TENS.</p>
+            </div>
+          </article>
+          <article class="pillar-card" data-filter-jump="cosmiatria">
+            <img src="assets/service-facial.jpg" alt="Cosmiatría Estética Facial" />
+            <div class="pillar-body">
+              <span class="pillar-tag">Tda. 2101 · Cosmiatría</span>
+              <h3>Faciales &amp; Aparatología</h3>
+              <p>Limpieza profunda con punta de diamante, hidrodermoabrasión, Dermapén, máscara LED y colágeno.</p>
+            </div>
+          </article>
+          <article class="pillar-card" data-filter-jump="mirada">
+            <img src="assets/service-mirada.jpg" alt="Diseño de Cejas, Pestañas y Depilación" />
+            <div class="pillar-body">
+              <span class="pillar-tag">Tda. 3100 · Studio Mirada</span>
+              <h3>Pestañas, Cejas &amp; Depilación</h3>
+              <p>Extensiones pelo a pelo, lifting, microblading, microshading, depilación láser e hilo hindú.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Catalog with Filter & Live Booking -->
+    <section id="servicios" class="section-pad">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <span class="section-kicker">Carta de Tratamientos</span>
+            <h2 class="section-title">Nuestros Servicios Especializados</h2>
+            <p class="section-sub">Precios transparentes en soles. Selecciona tu tratamiento y reserva al instante con confirmación en vivo.</p>
+          </div>
+          <div class="filter-pills" id="service-filter-pills">
+            <button class="filter-pill active" data-cat="all">Todos</button>
+            <button class="filter-pill" data-cat="podologia">Podología</button>
+            <button class="filter-pill" data-cat="masajes">Fisio &amp; Masajes</button>
+            <button class="filter-pill" data-cat="cosmiatria">Cosmiatría</button>
+            <button class="filter-pill" data-cat="mirada">Cejas &amp; Pestañas</button>
+          </div>
+        </div>
+
+        <div class="services-grid" id="services-grid">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Promos & Cycling Clubs Banner -->
+    <section id="promociones" class="promos-section">
+      <div class="container">
+        <div class="promos-header">
+          <span class="section-kicker light">Campañas Activas &amp; Alianzas</span>
+          <h2 class="section-title light">Promociones de Temporada &amp; Clubes Deportivos</h2>
+        </div>
+
+        <div class="promos-grid">
+          <div class="promo-card promo-highlight">
+            <span class="promo-chip">OFERTA ESTRELLA</span>
+            <h3>Podología Integral + Láser</h3>
+            <p>Profilaxis completa + sesión de podología láser para hongos y salud ungueal. Incluye evaluación sin costo.</p>
+            <div class="promo-price-row">
+              <div>
+                <span class="old-price">S/ 75.00</span>
+                <strong class="new-price">S/ 50.00</strong>
+              </div>
+              <button class="btn btn-gold" data-book-service="srv-podo-laser">Reservar Oferta</button>
+            </div>
+          </div>
+
+          <div class="promo-card">
+            <span class="promo-chip aqua">PROMO 2x1 · PESTAÑAS O FACIAL</span>
+            <h3>Extensiones 2x1 o Limpieza Facial 2x1</h3>
+            <p>Ven acompañada y aprovecha nuestras promociones 2x1 en extensiones pelo a pelo (S/ 120) o limpieza facial con punta de diamante.</p>
+            <div class="promo-price-row">
+              <div>
+                <span class="old-price">S/ 140.00</span>
+                <strong class="new-price">S/ 120.00</strong>
+              </div>
+              <button class="btn btn-outline-light" data-book-service="srv-pestanas-2x1">Aprovechar 2x1</button>
+            </div>
+          </div>
+
+          <div class="promo-card">
+            <span class="promo-chip green">ALIANZA CICLISTAS &amp; ATLETAS</span>
+            <h3>Descarga Muscular Deportiva</h3>
+            <p>Convenio activo con clubes de ciclismo (Team Aquiles, Evolution Riders y atletas). Compresas, ventosas, TENS y terapia myofascial.</p>
+            <div class="promo-price-row">
+              <div>
+                <span class="old-price">Beneficio Club</span>
+                <strong class="new-price">S/ 65.00</strong>
+              </div>
+              <button class="btn btn-outline-light" data-book-service="srv-descarga">Agendar Descarga</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Online Commercial Store (Products) -->
+    <section id="tienda" class="section-pad bg-soft">
+      <div class="container">
+        <div class="store-banner">
+          <div class="store-banner-text">
+            <span class="section-kicker">Tienda Oficial · Cuidado en Casa</span>
+            <h2 class="section-title">Productos Clínicos &amp; Bienestar</h2>
+            <p class="section-sub">
+              Continúa tu tratamiento en casa con nuestras fórmulas podológicas y cosméticas recomendadas por nuestras especialistas. Recojo en tienda o delivery en Lima.
+            </p>
+            <div class="store-badges">
+              <span><i data-lucide="shield-check"></i> Fórmulas garantizadas</span>
+              <span><i data-lucide="package"></i> Stock en tiempo real</span>
+              <span><i data-lucide="smartphone"></i> Pago rápido Yape / Plin</span>
+            </div>
+          </div>
+          <div class="store-banner-visual">
+            <img src="assets/products-collection.jpg" alt="Colección de productos Spa Betty cuidado en casa" />
+          </div>
+        </div>
+
+        <div class="products-grid" id="products-grid">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Locations / Cabins & Contact -->
+    <section id="sedes" class="section-pad">
+      <div class="container">
+        <div class="locations-wrapper">
+          <div class="locations-info">
+            <span class="section-kicker">Encuéntranos en Lima</span>
+            <h2 class="section-title">C.C. Barrio Chino · 5 Cabinas Especializadas</h2>
+            <p class="section-sub">
+              Ubicados en el corazón comercial del Cercado de Lima, con ambientes dedicados para cada especialidad para brindarte privacidad, higiene y atención puntual.
+            </p>
+
+            <div class="cabins-list">
+              <div class="cabin-item">
+                <span class="cabin-num">Tda. 2015</span>
+                <div>
+                  <strong>Centro Podológico Principal</strong>
+                  <p>2.º piso · Podología clínica, láser, pie diabético y ortonixia</p>
+                </div>
+              </div>
+              <div class="cabin-item">
+                <span class="cabin-num">Tda. 2013</span>
+                <div>
+                  <strong>Fisioterapia &amp; Quiropraxia</strong>
+                  <p>2.º piso · Ajustes vertebrales, rehabilitación y electroterapia TENS</p>
+                </div>
+              </div>
+              <div class="cabin-item">
+                <span class="cabin-num">Tda. 2100</span>
+                <div>
+                  <strong>Cabina de Masajes &amp; Relajación</strong>
+                  <p>2.º piso · Masajes integrales, descarga deportiva, piedras y ventosas</p>
+                </div>
+              </div>
+              <div class="cabin-item">
+                <span class="cabin-num">Tda. 2101</span>
+                <div>
+                  <strong>Cosmiatría Estética Facial</strong>
+                  <p>2.º piso · Punta de diamante, hidrodermoabrasión, Dermapén y LED</p>
+                </div>
+              </div>
+              <div class="cabin-item">
+                <span class="cabin-num">Tda. 3100</span>
+                <div>
+                  <strong>Studio Mirada, Cejas &amp; Láser VIP</strong>
+                  <p>3.º piso · Microblading, extensiones de pestañas y depilación láser</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>Información de Atención</h3>
+            <ul class="contact-details">
+              <li>
+                <i data-lucide="map-pin"></i>
+                <div>
+                  <strong>Dirección Exacta</strong>
+                  <span>C.C. Barrio Chino, Jr. Ucayali 724 / Jr. Paruro 860<br />Tdas. 2013, 2015, 2100, 2101 (2.º piso) y 3100 (3.º piso), Lima</span>
+                </div>
+              </li>
+              <li>
+                <i data-lucide="clock"></i>
+                <div>
+                  <strong>Horario de Atención</strong>
+                  <span>Lunes a Domingo: 10:00 a.m. – 8:00 p.m.</span>
+                </div>
+              </li>
+              <li>
+                <i data-lucide="phone"></i>
+                <div>
+                  <strong>WhatsApp &amp; Reservas</strong>
+                  <span>+51 964 545 774</span>
+                </div>
+              </li>
+              <li>
+                <i data-lucide="mail"></i>
+                <div>
+                  <strong>Correo Electrónico</strong>
+                  <span>cordovacondoribeatriz@gmail.com</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="contact-card-actions">
+              <button class="btn btn-primary btn-full" id="btn-contact-book">
+                <i data-lucide="calendar-check"></i>
+                <span>Reservar Cita en Línea</span>
+              </button>
+              <a href="https://wa.me/51964545774" target="_blank" rel="noopener" class="btn btn-whatsapp btn-full">
+                <i data-lucide="message-circle"></i>
+                <span>Escribir al WhatsApp (964 545 774)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="assets/logo-spa-betty.jpg" alt="Spa Betty" />
+          <div>
+            <strong>Salud &amp; Belleza SPA BETTY</strong>
+            <p>Belleza Integral, Podología Clínica, Fisioterapia y Cosmiatría Estética · Lima, Perú</p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.facebook.com/saludybellezaSpaBETTY/?locale=es_LA" target="_blank" rel="noopener">Facebook Oficial</a>
+          <a href="https://www.tiktok.com/@saludybellezaspabetty" target="_blank" rel="noopener">TikTok @saludybellezaspabetty</a>
+          <button class="link-as-btn" data-switch-mode="crm">Acceso Interno CRM →</button>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- =========================================================
+       MODE 2: INTEGRATED CRM & POS MANAGEMENT SYSTEM
+  ========================================================= -->
+  <div id="view-crm" class="app-view">
+    <div class="crm-layout">
+      <!-- CRM Sidebar -->
+      <aside class="crm-sidebar">
+        <div class="crm-brand">
+          <img src="assets/logo-spa-betty.jpg" alt="Spa Betty" />
+          <div>
+            <strong>SPA BETTY</strong>
+            <span>CRM &amp; Gestión Comercial</span>
+          </div>
+        </div>
+
+        <nav class="crm-nav" aria-label="Módulos del CRM">
+          <button class="crm-nav-item active" data-crm-tab="dashboard">
+            <i data-lucide="layout-dashboard"></i>
+            <span>Resumen General</span>
+          </button>
+          <button class="crm-nav-item" data-crm-tab="citas">
+            <i data-lucide="calendar-clock"></i>
+            <span>Control de Citas</span>
+            <span class="nav-pill" id="nav-citas-count">0</span>
+          </button>
+          <button class="crm-nav-item" data-crm-tab="ventas">
+            <i data-lucide="receipt"></i>
+            <span>Ventas Diarias &amp; Caja</span>
+          </button>
+          <button class="crm-nav-item" data-crm-tab="clientes">
+            <i data-lucide="users"></i>
+            <span>Clientes Frecuentes</span>
+          </button>
+          <button class="crm-nav-item" data-crm-tab="personal">
+            <i data-lucide="stethoscope"></i>
+            <span>Personal &amp; Comisiones</span>
+          </button>
+          <button class="crm-nav-item" data-crm-tab="inventario">
+            <i data-lucide="package"></i>
+            <span>Productos &amp; Stock</span>
+          </button>
+        </nav>
+
+        <div class="crm-sidebar-footer">
+          <div class="sync-status-card">
+            <div class="sync-status-head">
+              <span class="pulse-dot green"></span>
+              <strong>Web &amp; Pasarela Conectadas</strong>
+            </div>
+            <p>Las reservas y compras online se sincronizan en tiempo real con tu agenda y caja.</p>
+          </div>
+          <div class="crm-user-mini">
+            <div class="avatar-circle">BC</div>
+            <div>
+              <strong>Beatriz Córdova</strong>
+              <span>Administradora · C.C. Barrio Chino</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- CRM Main Content -->
+      <main class="crm-main">
+        <!-- CRM Header -->
+        <header class="crm-header">
+          <div>
+            <h1 id="crm-page-title">Resumen General del Día</h1>
+            <p id="crm-page-subtitle">Sede C.C. Barrio Chino (5 Cabinas) · Operación en tiempo real</p>
+          </div>
+          <div class="crm-header-actions">
+            <button class="btn btn-outline-navy" id="btn-crm-new-appt">
+              <i data-lucide="calendar-plus"></i>
+              <span>Nueva Cita</span>
+            </button>
+            <button class="btn btn-primary" id="btn-crm-new-sale">
+              <i data-lucide="plus-circle"></i>
+              <span>Registrar Venta (POS)</span>
+            </button>
+          </div>
+        </header>
+
+        <!-- TAB: DASHBOARD -->
+        <section id="crm-tab-dashboard" class="crm-panel active">
+          <div class="kpi-grid" id="crm-kpi-grid">
+            <!-- Populated by app.js -->
+          </div>
+
+          <div class="crm-dash-grid">
+            <div class="crm-card">
+              <div class="crm-card-head">
+                <div>
+                  <h3>Ingresos del Día por Categoría &amp; Canal</h3>
+                  <p>Servicios en cabina + tienda de productos (en Soles)</p>
+                </div>
+                <span class="tag-soft">Hoy</span>
+              </div>
+              <div id="crm-revenue-bars" class="revenue-bars"></div>
+            </div>
+
+            <div class="crm-card">
+              <div class="crm-card-head">
+                <div>
+                  <h3>Desglose por Método de Pago</h3>
+                  <p>Arqueo automático (Yape, Plin, Tarjeta y Efectivo)</p>
+                </div>
+              </div>
+              <div id="crm-payment-breakdown" class="payment-breakdown"></div>
+            </div>
+          </div>
+
+          <div class="crm-dash-grid wide-left">
+            <div class="crm-card">
+              <div class="crm-card-head">
+                <div>
+                  <h3>Próximas Citas &amp; Cabinas Activas</h3>
+                  <p>Incluye reservas entrantes desde la web con pago online</p>
+                </div>
+                <button class="link-btn" data-jump-crm="citas">Ver agenda completa →</button>
+              </div>
+              <div class="table-wrap">
+                <table class="crm-table">
+                  <thead>
+                    <tr>
+                      <th>Hora</th>
+                      <th>Cliente</th>
+                      <th>Servicio</th>
+                      <th>Cabina / Especialista</th>
+                      <th>Canal / Pago</th>
+                      <th>Estado</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dash-upcoming-tbody"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="crm-card">
+              <div class="crm-card-head">
+                <div>
+                  <h3>Alertas Inteligentes</h3>
+                  <p>Acciones rápidas para retener clientes y cuidar stock</p>
+                </div>
+              </div>
+              <div id="crm-smart-alerts" class="alerts-stack"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: CITAS (AGENDA MULTI-CABINA) -->
+        <section id="crm-tab-citas" class="crm-panel">
+          <div class="crm-toolbar">
+            <div class="filter-pills" id="crm-cabin-filters">
+              <button class="filter-pill active" data-cabin="all">Todas las Cabinas</button>
+              <button class="filter-pill" data-cabin="Tda. 2015">Tda. 2015 · Podología</button>
+              <button class="filter-pill" data-cabin="Tda. 2013">Tda. 2013 · Fisio/Quiro</button>
+              <button class="filter-pill" data-cabin="Tda. 2100">Tda. 2100 · Masajes</button>
+              <button class="filter-pill" data-cabin="Tda. 2101">Tda. 2101 · Cosmiatría</button>
+              <button class="filter-pill" data-cabin="Tda. 3100">Tda. 3100 · Mirada VIP</button>
+            </div>
+            <select id="crm-status-filter" class="crm-select">
+              <option value="all">Todos los estados</option>
+              <option value="Confirmada">Confirmada</option>
+              <option value="En Atención">En Atención</option>
+              <option value="Completada">Completada</option>
+              <option value="Pendiente">Pendiente</option>
+            </select>
+          </div>
+
+          <div class="crm-card">
+            <div class="table-wrap">
+              <table class="crm-table">
+                <thead>
+                  <tr>
+                    <th>Fecha / Hora</th>
+                    <th>Cliente</th>
+                    <th>Servicio</th>
+                    <th>Cabina &amp; Especialista</th>
+                    <th>Origen &amp; Pago</th>
+                    <th>Monto</th>
+                    <th>Estado</th>
+                    <th>Acción Rápida</th>
+                  </tr>
+                </thead>
+                <tbody id="crm-citas-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: VENTAS DIARIAS & POS -->
+        <section id="crm-tab-ventas" class="crm-panel">
+          <div class="sales-summary-strip" id="sales-summary-strip"></div>
+
+          <div class="crm-toolbar">
+            <div class="filter-pills" id="sales-method-filters">
+              <button class="filter-pill active" data-method="all">Todos los Pagos</button>
+              <button class="filter-pill" data-method="Yape">Yape</button>
+              <button class="filter-pill" data-method="Plin">Plin</button>
+              <button class="filter-pill" data-method="Tarjeta">Tarjeta</button>
+              <button class="filter-pill" data-method="Efectivo">Efectivo</button>
+            </div>
+            <div class="search-box">
+              <i data-lucide="search"></i>
+              <input type="text" id="sales-search-input" placeholder="Buscar cliente o concepto..." />
+            </div>
+          </div>
+
+          <div class="crm-card">
+            <div class="table-wrap">
+              <table class="crm-table">
+                <thead>
+                  <tr>
+                    <th>Hora / Ticket</th>
+                    <th>Cliente</th>
+                    <th>Detalle (Servicio / Producto)</th>
+                    <th>Tipo</th>
+                    <th>Especialista</th>
+                    <th>Método</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody id="crm-ventas-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: CLIENTES FRECUENTES -->
+        <section id="crm-tab-clientes" class="crm-panel">
+          <div class="crm-toolbar">
+            <div class="filter-pills" id="client-tier-filters">
+              <button class="filter-pill active" data-tier="all">Todos</button>
+              <button class="filter-pill" data-tier="VIP Oro">VIP Oro</button>
+              <button class="filter-pill" data-tier="Frecuente">Frecuente</button>
+              <button class="filter-pill" data-tier="Club Ciclista">Club Ciclista</button>
+              <button class="filter-pill" data-tier="Nuevo">Nuevo</button>
+            </div>
+            <div class="search-box">
+              <i data-lucide="search"></i>
+              <input type="text" id="client-search-input" placeholder="Buscar por nombre o celular..." />
+            </div>
+          </div>
+
+          <div class="crm-card">
+            <div class="table-wrap">
+              <table class="crm-table">
+                <thead>
+                  <tr>
+                    <th>Cliente</th>
+                    <th>Nivel / Club</th>
+                    <th>Visitas</th>
+                    <th>Gasto Acumulado</th>
+                    <th>Puntos Betty</th>
+                    <th>Última Visita &amp; Servicio</th>
+                    <th>Ficha 360°</th>
+                  </tr>
+                </thead>
+                <tbody id="crm-clientes-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: PERSONAL & COMISIONES -->
+        <section id="crm-tab-personal" class="crm-panel">
+          <div class="staff-grid" id="crm-staff-grid">
+            <!-- Populated by app.js -->
+          </div>
+        </section>
+
+        <!-- TAB: PRODUCTOS & INVENTARIO -->
+        <section id="crm-tab-inventario" class="crm-panel">
+          <div class="crm-card">
+            <div class="crm-card-head">
+              <div>
+                <h3>Inventario Sincronizado con Tienda Online</h3>
+                <p>Cada compra en la web o venta en caja descuenta el stock automáticamente</p>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="crm-table">
+                <thead>
+                  <tr>
+                    <th>Producto</th>
+                    <th>Categoría</th>
+                    <th>Precio Venta</th>
+                    <th>Stock Actual</th>
+                    <th>Estado</th>
+                    <th>Ajuste Rápido</th>
+                  </tr>
+                </thead>
+                <tbody id="crm-inventory-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODE 3: BRAND HOMOLOGATION PROPOSAL (LOGO & VISUAL SYSTEM)
+  ========================================================= -->
+  <div id="view-brand" class="app-view">
+    <div class="brand-page">
+      <div class="container">
+        <div class="brand-hero-header">
+          <span class="section-kicker">Propuesta de Homologación de Marca</span>
+          <h1>De dos logotipos dispersos a una identidad clínica de alto valor</h1>
+          <p>
+            Analizamos las redes actuales de <strong>Salud &amp; Belleza Spa Betty</strong> (Facebook, TikTok y gráficas internas) y diseñamos una identidad unificada que conserva su esencia reconocida (silueta femenina + paleta azul/turquesa) elevándola al estándar de un centro integral moderno.
+          </p>
+        </div>
+
+        <!-- Before vs After -->
+        <div class="brand-compare-grid">
+          <div class="brand-before-col">
+            <span class="compare-label muted">DIAGNÓSTICO ACTUAL (SIN HOMOLOGAR)</span>
+            <div class="legacy-cards">
+              <div class="legacy-card">
+                <img src="assets/legacy-logo-fb.jpg" alt="Logo actual Facebook" />
+                <div>
+                  <strong>Logo en Facebook</strong>
+                  <p>Círculo azul/celeste con tipografía informal y poca legibilidad en formatos pequeños.</p>
+                </div>
+              </div>
+              <div class="legacy-card">
+                <img src="assets/legacy-logo-alt.jpg" alt="Logo alterno enviado" />
+                <div>
+                  <strong>Versión Alterna (Monocromo)</strong>
+                  <p>Estilo minimalista distinto sin vínculo cromático con los uniformes ni cartelería del local.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="brand-after-col">
+            <span class="compare-label gold">NUEVA IDENTIDAD HOMOLOGADA PROPUESTA</span>
+            <div class="new-logo-showcase">
+              <img src="assets/logo-spa-betty.jpg" alt="Nuevo logo homologado Salud y Belleza Spa Betty" />
+              <div class="new-logo-notes">
+                <h3>Salud &amp; Belleza SPA BETTY</h3>
+                <ul>
+                  <li><i data-lucide="check-circle-2"></i><span><strong>Fusiona lo mejor de ambos:</strong> silueta serena con pétalos botánicos + sello circular profesional.</span></li>
+                  <li><i data-lucide="check-circle-2"></i><span><strong>Alineado a los uniformes reales:</strong> Azul Zafiro Clínico + Turquesa Spa + toque Dorado Champán.</span></li>
+                  <li><i data-lucide="check-circle-2"></i><span><strong>Versátil:</strong> funciona en web, bordado de scrubs, letreros de galería, WhatsApp y envases propios.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Official Color Palette -->
+        <section class="brand-block">
+          <h2>Paleta Cromática Oficial (clic para copiar código)</h2>
+          <div class="palette-grid">
+            <button class="swatch-card" data-copy-hex="#1B326B">
+              <div class="swatch-color" style="background:#1B326B;"></div>
+              <div class="swatch-meta">
+                <strong>Azul Zafiro Clínico</strong>
+                <span>#1B326B · Confianza médica y uniformes</span>
+              </div>
+            </button>
+            <button class="swatch-card" data-copy-hex="#00A5CF">
+              <div class="swatch-color" style="background:#00A5CF;"></div>
+              <div class="swatch-meta">
+                <strong>Turquesa Spa</strong>
+                <span>#00A5CF · Higiene, láser y frescura</span>
+              </div>
+            </button>
+            <button class="swatch-card" data-copy-hex="#C9A45C">
+              <div class="swatch-color" style="background:#C9A45C;"></div>
+              <div class="swatch-meta">
+                <strong>Dorado Champán</strong>
+                <span>#C9A45C · Distinción y nivel VIP</span>
+              </div>
+            </button>
+            <button class="swatch-card" data-copy-hex="#F5F8FC">
+              <div class="swatch-color border-swatch" style="background:#F5F8FC;"></div>
+              <div class="swatch-meta">
+                <strong>Blanco Perla</strong>
+                <span>#F5F8FC · Limpieza clínica y amplitud</span>
+              </div>
+            </button>
+            <button class="swatch-card" data-copy-hex="#0F172A">
+              <div class="swatch-color" style="background:#0F172A;"></div>
+              <div class="swatch-meta">
+                <strong>Tinta Noche</strong>
+                <span>#0F172A · Lectura nítida en CRM y web</span>
+              </div>
+            </button>
+          </div>
+        </section>
+
+        <!-- Applications Preview & Commercial Pitch -->
+        <section class="brand-block">
+          <h2>Aplicaciones Reales &amp; Impacto Comercial</h2>
+          <div class="brand-apps-grid">
+            <div class="brand-mockup-card loyalty-card-mock">
+              <div class="loyalty-card-top">
+                <img src="assets/logo-spa-betty.jpg" alt="Logo" />
+                <span>CLUB VIP · PUNTOS BETTY</span>
+              </div>
+              <div class="loyalty-card-mid">
+                <strong>Tarjeta de Cliente Frecuente</strong>
+                <p>Acumula puntos en cada sesión de Podología, Masajes o Cosmiatría y canjea tratamientos.</p>
+              </div>
+              <div class="loyalty-card-bot">
+                <span>C.C. BARRIO CHINO · LIMA</span>
+                <span>#00428 · ORO</span>
+              </div>
+            </div>
+
+            <div class="brand-mockup-card impact-card">
+              <span class="section-kicker">¿Por qué invertir en este ecosistema?</span>
+              <h3>Beneficios directos para el negocio</h3>
+              <ul class="impact-list">
+                <li><strong>Cero citas perdidas:</strong> tus clientes reservan 24/7 desde TikTok/Facebook y pagan por Yape o tarjeta sin saturar WhatsApp.</li>
+                <li><strong>Control total de las 5 cabinas:</strong> evita cruces entre Tda. 2013, 2015, 2100, 2101 y 3100 y mide ventas por especialista.</li>
+                <li><strong>Más recompra:</strong> el CRM detecta clientes recurrentes y permite reactivarlos con 1 clic en WhatsApp.</li>
+                <li><strong>Nueva línea de ingresos:</strong> vende tu Talco Crema de Menta y kits podológicos directo en la tienda online.</li>
+              </ul>
+              <div class="impact-cta-row">
+                <button class="btn btn-primary" data-switch-mode="web">Probar Reserva Online</button>
+                <button class="btn btn-outline-navy" data-switch-mode="crm">Explorar Panel CRM</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODALS & DRAWERS (INTERACTIVE FLOWS)
+  ========================================================= -->
+
+  <!-- Modal: Online Booking + Peruvian Payment Gateway -->
+  <div class="modal-backdrop" id="modal-booking" hidden>
+    <div class="modal-dialog modal-lg" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">
+      <div class="modal-head">
+        <div>
+          <span class="badge-aqua">Reserva en Línea · Sincronización en Vivo</span>
+          <h3 id="booking-modal-title">Agenda tu Cita en Spa Betty</h3>
+        </div>
+        <button class="icon-close" data-close-modal="modal-booking" aria-label="Cerrar"><i data-lucide="x"></i></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="booking-steps-bar">
+          <div class="bstep active" data-bstep="1"><span>1</span> Servicio y Horario</div>
+          <div class="bstep" data-bstep="2"><span>2</span> Tus Datos</div>
+          <div class="bstep" data-bstep="3"><span>3</span> Pasarela de Pago</div>
+        </div>
+
+        <form id="booking-form">
+          <!-- Step 1 -->
+          <div class="booking-step-pane active" id="booking-pane-1">
+            <div class="form-grid">
+              <div class="form-group full">
+                <label for="bk-service">Tratamiento / Servicio</label>
+                <select id="bk-service" required></select>
+              </div>
+              <div class="form-group">
+                <label for="bk-date">Fecha</label>
+                <input type="date" id="bk-date" required />
+              </div>
+              <div class="form-group">
+                <label for="bk-time">Horario Disponible</label>
+                <select id="bk-time" required>
+                  <option value="10:30">10:30 a.m.</option>
+                  <option value="11:30">11:30 a.m.</option>
+                  <option value="13:00">01:00 p.m.</option>
+                  <option value="15:00" selected>03:00 p.m.</option>
+                  <option value="16:30">04:30 p.m.</option>
+                  <option value="18:00">06:00 p.m.</option>
+                  <option value="19:00">07:00 p.m.</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label for="bk-staff">Especialista &amp; Cabina Asignada</label>
+                <select id="bk-staff" required></select>
+              </div>
+            </div>
+            <div class="booking-summary-box" id="bk-summary-preview"></div>
+            <div class="modal-footer-row">
+              <button type="button" class="btn btn-outline-navy" data-close-modal="modal-booking">Cancelar</button>
+              <button type="button" class="btn btn-primary" id="btn-bk-next-1">Continuar a Tus Datos →</button>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="booking-step-pane" id="booking-pane-2">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="bk-name">Nombre y Apellido</label>
+                <input type="text" id="bk-name" placeholder="Ej. María Fernanda Salazar" required />
+              </div>
+              <div class="form-group">
+                <label for="bk-phone">Celular / WhatsApp</label>
+                <input type="tel" id="bk-phone" placeholder="Ej. 987 654 321" required />
+              </div>
+              <div class="form-group full">
+                <label for="bk-email">Correo Electrónico (para comprobante)</label>
+                <input type="email" id="bk-email" placeholder="cliente@correo.com" />
+              </div>
+              <div class="form-group full">
+                <label for="bk-notes">Notas clínicas o club deportivo (opcional)</label>
+                <input type="text" id="bk-notes" placeholder="Ej. Dolor lumbar, pie diabético, miembro Team Aquiles..." />
+              </div>
+            </div>
+            <div class="modal-footer-row">
+              <button type="button" class="btn btn-outline-navy" id="btn-bk-prev-2">← Volver</button>
+              <button type="button" class="btn btn-primary" id="btn-bk-next-2">Ir a Pasarela de Pago →</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Peruvian Payment Gateway -->
+          <div class="booking-step-pane" id="booking-pane-3">
+            <div class="gateway-header">
+              <div>
+                <strong>Pasarela Segura Perú</strong>
+                <span>Procesamiento encriptado · Confirmación inmediata</span>
+              </div>
+              <div class="gateway-amount" id="bk-gateway-total">S/ 50.00</div>
+            </div>
+
+            <div class="gateway-methods">
+              <label class="gw-method active">
+                <input type="radio" name="bk-pay-method" value="Yape" checked />
+                <span class="gw-badge yape">Yape</span>
+                <div>
+                  <strong>Yape Instantáneo</strong>
+                  <small>QR o código de aprobación</small>
+                </div>
+              </label>
+              <label class="gw-method">
+                <input type="radio" name="bk-pay-method" value="Plin" />
+                <span class="gw-badge plin">Plin</span>
+                <div>
+                  <strong>Plin Interbancario</strong>
+                  <small>BBVA, Interbank, Scotiabank</small>
+                </div>
+              </label>
+              <label class="gw-method">
+                <input type="radio" name="bk-pay-method" value="Tarjeta" />
+                <span class="gw-badge card">Visa / MC</span>
+                <div>
+                  <strong>Tarjeta Débito / Crédito</strong>
+                  <small>Culqi / Niubiz 100% seguro</small>
+                </div>
+              </label>
+            </div>
+
+            <div class="gw-detail-box" id="gw-yape-box">
+              <div class="qr-sim-box">
+                <div class="qr-pattern" aria-hidden="true"></div>
+                <div>
+                  <strong>Escanea o yapea al 964 545 774</strong>
+                  <p>Titular: Salud y Belleza Spa Betty E.I.R.L.</p>
+                  <div class="form-group compact">
+                    <label for="bk-yape-code">Código de aprobación (simulación)</label>
+                    <input type="text" id="bk-yape-code" value="482915" maxlength="6" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gw-detail-box" id="gw-card-box" hidden>
+              <div class="form-grid">
+                <div class="form-group full">
+                  <label>Número de Tarjeta (Demo)</label>
+                  <input type="text" value="4557 •••• •••• 8492" />
+                </div>
+                <div class="form-group">
+                  <label>Vencimiento</label>
+                  <input type="text" value="09/28" />
+                </div>
+                <div class="form-group">
+                  <label>CVV</label>
+                  <input type="text" value="412" />
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-footer-row">
+              <button type="button" class="btn btn-outline-navy" id="btn-bk-prev-3">← Volver</button>
+              <button type="submit" class="btn btn-primary btn-lg" id="btn-bk-confirm">
+                <i data-lucide="lock"></i>
+                <span>Pagar y Confirmar Reserva</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide-over Cart Drawer -->
+  <div class="drawer-backdrop" id="drawer-cart" hidden>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Carrito de compras">
+      <div class="modal-head">
+        <div>
+          <span class="badge-aqua">Tienda Oficial Spa Betty</span>
+          <h3>Tu Carrito de Compras</h3>
+        </div>
+        <button class="icon-close" data-close-drawer="drawer-cart" aria-label="Cerrar"><i data-lucide="x"></i></button>
+      </div>
+
+      <div class="drawer-body" id="cart-items-list"></div>
+
+      <div class="drawer-footer">
+        <div class="cart-totals">
+          <div class="cart-total-row">
+            <span>Subtotal</span>
+            <strong id="cart-subtotal">S/ 0.00</strong>
+          </div>
+          <div class="cart-total-row small">
+            <span>Entrega</span>
+            <span>Recojo en C.C. Barrio Chino (Gratis)</span>
+          </div>
+        </div>
+
+        <div id="cart-checkout-fields" class="cart-checkout-box" hidden>
+          <input type="text" id="cart-buyer-name" placeholder="Tu nombre completo" />
+          <input type="tel" id="cart-buyer-phone" placeholder="Tu celular / WhatsApp" />
+          <select id="cart-pay-method">
+            <option value="Yape">Pagar con Yape (964 545 774)</option>
+            <option value="Plin">Pagar con Plin</option>
+            <option value="Tarjeta">Tarjeta Visa / Mastercard</option>
+          </select>
+        </div>
+
+        <button class="btn btn-primary btn-full btn-lg" id="btn-cart-checkout">
+          <i data-lucide="credit-card"></i>
+          <span>Finalizar Compra Online</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: CRM Quick POS Sale -->
+  <div class="modal-backdrop" id="modal-pos" hidden>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="pos-title">
+      <div class="modal-head">
+        <div>
+          <span class="badge-aqua">Punto de Venta (Caja)</span>
+          <h3 id="pos-title">Registrar Venta Rápida</h3>
+        </div>
+        <button class="icon-close" data-close-modal="modal-pos"><i data-lucide="x"></i></button>
+      </div>
+      <form id="pos-form" class="modal-body">
+        <div class="form-grid">
+          <div class="form-group full">
+            <label for="pos-client">Cliente</label>
+            <input type="text" id="pos-client" placeholder="Nombre del cliente (o Cliente al Paso)" required />
+          </div>
+          <div class="form-group">
+            <label for="pos-type">Tipo de Venta</label>
+            <select id="pos-type">
+              <option value="Servicio">Servicio en Cabina</option>
+              <option value="Producto">Producto de Tienda</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pos-item">Servicio / Producto</label>
+            <select id="pos-item" required></select>
+          </div>
+          <div class="form-group">
+            <label for="pos-staff">Especialista / Vendedor</label>
+            <select id="pos-staff" required></select>
+          </div>
+          <div class="form-group">
+            <label for="pos-method">Método de Pago</label>
+            <select id="pos-method">
+              <option value="Yape">Yape</option>
+              <option value="Plin">Plin</option>
+              <option value="Efectivo">Efectivo</option>
+              <option value="Tarjeta">Tarjeta</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label for="pos-amount">Monto Total (S/)</label>
+            <input type="number" id="pos-amount" step="0.50" min="1" required />
+          </div>
+        </div>
+        <div class="modal-footer-row">
+          <button type="button" class="btn btn-outline-navy" data-close-modal="modal-pos">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Registrar en Caja</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: CRM New Appointment -->
+  <div class="modal-backdrop" id="modal-crm-appt" hidden>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="crm-appt-title">
+      <div class="modal-head">
+        <div>
+          <span class="badge-aqua">Agenda Multi-Cabina</span>
+          <h3 id="crm-appt-title">Agendar Cita Interna (WhatsApp / Presencial)</h3>
+        </div>
+        <button class="icon-close" data-close-modal="modal-crm-appt"><i data-lucide="x"></i></button>
+      </div>
+      <form id="crm-appt-form" class="modal-body">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="ca-client">Nombre del Cliente</label>
+            <input type="text" id="ca-client" required placeholder="Ej. Luis Alberto Paredes" />
+          </div>
+          <div class="form-group">
+            <label for="ca-phone">Celular</label>
+            <input type="tel" id="ca-phone" required placeholder="999 888 777" />
+          </div>
+          <div class="form-group full">
+            <label for="ca-service">Servicio</label>
+            <select id="ca-service" required></select>
+          </div>
+          <div class="form-group">
+            <label for="ca-time">Hora</label>
+            <select id="ca-time">
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="12:30">12:30</option>
+              <option value="14:30">14:30</option>
+              <option value="16:00" selected>16:00</option>
+              <option value="17:30">17:30</option>
+              <option value="19:00">19:00</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ca-channel">Canal</label>
+            <select id="ca-channel">
+              <option value="WhatsApp">WhatsApp</option>
+              <option value="Presencial">Presencial (Galería)</option>
+              <option value="TikTok">TikTok Promo</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label for="ca-staff">Especialista &amp; Cabina</label>
+            <select id="ca-staff" required></select>
+          </div>
+        </div>
+        <div class="modal-footer-row">
+          <button type="button" class="btn btn-outline-navy" data-close-modal="modal-crm-appt">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar en Agenda</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Slide-over Client 360 Drawer -->
+  <div class="drawer-backdrop" id="drawer-client" hidden>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Ficha del cliente">
+      <div class="modal-head">
+        <div>
+          <span class="badge-aqua">Ficha 360° de Fidelización</span>
+          <h3 id="client-drawer-name">Cliente</h3>
+        </div>
+        <button class="icon-close" data-close-drawer="drawer-client"><i data-lucide="x"></i></button>
+      </div>
+      <div class="drawer-body" id="client-drawer-body"></div>
+    </div>
+  </div>
+
+  <!-- Live Sync Toast Notification -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
