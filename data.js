@@ -172,6 +172,7 @@ window.SPA_BETTY_SEED = {
       stock: 18,
       minStock: 6,
       icon: "droplets",
+      image: "assets/prod-talco-menta.jpg",
       description: "Fórmula podológica especializada con terbinafina, óxido de zinc y aloe vera. Frescura y protección antimicótica."
     },
     {
@@ -182,6 +183,7 @@ window.SPA_BETTY_SEED = {
       stock: 12,
       minStock: 5,
       icon: "shield",
+      image: "assets/prod-ortesis.jpg",
       description: "Alivio ergonómico para dedos en garra, juanetes y fricción diaria. Silicona médica lavable y reutilizable."
     },
     {
@@ -192,6 +194,7 @@ window.SPA_BETTY_SEED = {
       stock: 9,
       minStock: 5,
       icon: "flame",
+      image: "assets/prod-aceite-masaje.jpg",
       description: "Mezcla botánica de rápida absorción ideal para masajes descontracturantes y recuperación post-entreno."
     },
     {
@@ -202,6 +205,7 @@ window.SPA_BETTY_SEED = {
       stock: 4,
       minStock: 5,
       icon: "sparkles",
+      image: "assets/prod-serum-facial.jpg",
       description: "Tratamiento domiciliario post-limpieza facial para mantener luminosidad, elasticidad e hidratación profunda."
     },
     {
@@ -212,6 +216,7 @@ window.SPA_BETTY_SEED = {
       stock: 14,
       minStock: 5,
       icon: "heart-pulse",
+      image: "assets/prod-crema-urea.jpg",
       description: "Hidratación clínica intensiva para talones agrietados y piel sensible. Aprobada para cuidado diario."
     },
     {
@@ -222,6 +227,7 @@ window.SPA_BETTY_SEED = {
       stock: 3,
       minStock: 4,
       icon: "sun",
+      image: "assets/prod-compresa.jpg",
       description: "Cojín terapéutico cervical y lumbar con lavanda, manzanilla y eucalipto para termoterapia en casa."
     }
   ],

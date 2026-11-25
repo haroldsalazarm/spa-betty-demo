@@ -3,7 +3,7 @@
 ========================================================= */
 
 (function () {
-  const STORAGE_KEY = "spa_betty_demo_state_v1";
+  const STORAGE_KEY = "spa_betty_demo_state_v2";
 
   const clone = (obj) => JSON.parse(JSON.stringify(obj));
 
@@ -179,24 +179,28 @@
       .map((prd) => {
         const isLow = prd.stock <= prd.minStock;
         const out = prd.stock <= 0;
+        const imgSrc = prd.image || "assets/products-collection.jpg";
         return `
         <article class="product-card">
-          <div>
-            <div class="product-top">
-              <div class="product-icon-badge"><i data-lucide="${prd.icon || "package"}"></i></div>
-              <span class="stock-pill ${isLow ? "low" : ""}">
-                ${out ? "Agotado" : `${prd.stock} en stock`}
-              </span>
-            </div>
-            <h3>${prd.name}</h3>
-            <p>${prd.description}</p>
+          <div class="product-media">
+            <img src="${imgSrc}" alt="${prd.name}" loading="lazy" />
+            <span class="product-cat-badge">${prd.category}</span>
+            <span class="stock-pill ${isLow ? "low" : ""}">
+              ${out ? "Agotado" : `${prd.stock} en stock`}
+            </span>
           </div>
-          <div class="product-foot">
-            <span class="product-price">${fmtS(prd.price)}</span>
-            <button class="btn btn-aqua btn-sm" data-add-cart="${prd.id}" ${out ? "disabled" : ""}>
-              <i data-lucide="shopping-bag"></i>
-              <span>${out ? "Sin Stock" : "Añadir"}</span>
-            </button>
+          <div class="product-body">
+            <div>
+              <h3>${prd.name}</h3>
+              <p>${prd.description}</p>
+            </div>
+            <div class="product-foot">
+              <span class="product-price">${fmtS(prd.price)}</span>
+              <button class="btn btn-aqua btn-sm" data-add-cart="${prd.id}" ${out ? "disabled" : ""}>
+                <i data-lucide="shopping-bag"></i>
+                <span>${out ? "Sin Stock" : "Añadir"}</span>
+              </button>
+            </div>
           </div>
         </article>
       `;
@@ -243,9 +247,12 @@
         subtotal += lineTotal;
         return `
         <div class="cart-item-row">
-          <div>
-            <strong>${prd.name}</strong>
-            <span>${fmtS(prd.price)} c/u · Subtotal: ${fmtS(lineTotal)}</span>
+          <div class="cart-item-info">
+            <img src="${prd.image || "assets/products-collection.jpg"}" alt="${prd.name}" class="cart-item-thumb" />
+            <div>
+              <strong>${prd.name}</strong>
+              <span>${fmtS(prd.price)} c/u · Subtotal: ${fmtS(lineTotal)}</span>
+            </div>
           </div>
           <div class="qty-controls">
             <button class="qty-btn" data-cart-dec="${prd.id}">−</button>
@@ -898,7 +905,12 @@
         const low = p.stock <= p.minStock;
         return `
         <tr>
-          <td><strong>${p.name}</strong></td>
+          <td>
+            <div class="inv-product-cell">
+              <img src="${p.image || "assets/products-collection.jpg"}" alt="${p.name}" class="inv-thumb" />
+              <strong>${p.name}</strong>
+            </div>
+          </td>
           <td>${p.category}</td>
           <td><strong>${fmtS(p.price)}</strong></td>
           <td><strong style="font-size:15px;">${p.stock} unid.</strong></td>
