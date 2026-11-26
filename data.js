@@ -6,6 +6,90 @@
 window.SPA_BETTY_SEED = {
   services: [
     {
+      id: "srv-podo-laser",
+      name: "Podología Integral + Láser",
+      category: "podologia",
+      categoryLabel: "Podología",
+      cabin: "Tda. 2015",
+      defaultStaffId: "stf-rosario",
+      duration: "50 min",
+      price: 50.0,
+      oldPrice: 75.0,
+      promo: "Oferta",
+      featured: true,
+      description: "Profilaxis clínica + láser terapéutico para hongos y uñas."
+    },
+    {
+      id: "srv-masaje-integral",
+      name: "Masaje Integral + Ventosas & TENS",
+      category: "masajes",
+      categoryLabel: "Fisio & Masajes",
+      cabin: "Tda. 2100",
+      defaultStaffId: "stf-carlos",
+      duration: "60 min",
+      price: 50.0,
+      oldPrice: 60.0,
+      promo: "Más Pedido",
+      featured: true,
+      description: "Descontracturante completo con compresas calientes y electroterapia."
+    },
+    {
+      id: "srv-facial-diamante",
+      name: "Limpieza Facial Punta de Diamante",
+      category: "cosmiatria",
+      categoryLabel: "Cosmiatría",
+      cabin: "Tda. 2101",
+      defaultStaffId: "stf-valeria",
+      duration: "60 min",
+      price: 50.0,
+      oldPrice: 70.0,
+      promo: "2x1 Disp.",
+      featured: true,
+      description: "Microdermoabrasión, vapor ozono, máscara LED y colágeno."
+    },
+    {
+      id: "srv-descarga",
+      name: "Descarga Muscular Deportiva",
+      category: "masajes",
+      categoryLabel: "Fisio & Masajes",
+      cabin: "Tda. 2100",
+      defaultStaffId: "stf-carlos",
+      duration: "60 min",
+      price: 65.0,
+      oldPrice: 80.0,
+      promo: "Ciclistas",
+      featured: true,
+      description: "Liberación miofascial profunda + TENS para ciclistas y atletas."
+    },
+    {
+      id: "srv-pestanas-2x1",
+      name: "Extensiones de Pestañas (2x1)",
+      category: "mirada",
+      categoryLabel: "Cejas & Pestañas",
+      cabin: "Tda. 3100",
+      defaultStaffId: "stf-andrea",
+      duration: "90 min",
+      price: 120.0,
+      oldPrice: 140.0,
+      promo: "2x1",
+      featured: true,
+      description: "Aplicación pelo a pelo efecto natural o volumen para 2 personas."
+    },
+    {
+      id: "srv-quiro",
+      name: "Ajuste Quiropráctico & Terapia",
+      category: "masajes",
+      categoryLabel: "Fisio & Masajes",
+      cabin: "Tda. 2013",
+      defaultStaffId: "stf-carlos",
+      duration: "45 min",
+      price: 70.0,
+      oldPrice: null,
+      promo: "Eval. Gratis",
+      featured: true,
+      description: "Corrección vertebral para lumbalgia, cervicalgia y postura."
+    },
+    {
       id: "srv-podo-integral",
       name: "Podología Integral Clínica",
       category: "podologia",
@@ -15,25 +99,13 @@ window.SPA_BETTY_SEED = {
       duration: "45 min",
       price: 35.0,
       oldPrice: null,
-      promo: "Evaluación Gratis",
-      description: "Profilaxis podal completa, atención de uñeros (onicocriptosis), helomas y callosidades con instrumental estéril."
-    },
-    {
-      id: "srv-podo-laser",
-      name: "Podología Integral + Podología Láser",
-      category: "podologia",
-      categoryLabel: "Podología",
-      cabin: "Tda. 2015",
-      defaultStaffId: "stf-rosario",
-      duration: "50 min",
-      price: 50.0,
-      oldPrice: 75.0,
-      promo: "Oferta Estrella",
-      description: "Tratamiento especializado para onicomicosis (hongos en uñas) con láser terapéutico y ozono dérmico."
+      promo: null,
+      featured: false,
+      description: "Profilaxis podal, atención de uñeros, helomas y callosidades."
     },
     {
       id: "srv-ortonixia",
-      name: "Ortonixia & Cuidado Pie Diabético",
+      name: "Ortonixia & Pie Diabético",
       category: "podologia",
       categoryLabel: "Podología",
       cabin: "Tda. 2015",
@@ -41,64 +113,27 @@ window.SPA_BETTY_SEED = {
       duration: "60 min",
       price: 80.0,
       oldPrice: null,
-      promo: "Clínico",
-      description: "Corrección de uña encarnada con dispositivo ortonixia o atención preventiva segura para pie diabético y geriátrico."
+      promo: null,
+      featured: false,
+      description: "Corrección de uña encarnada y cuidado clínico preventivo."
     },
     {
-      id: "srv-masaje-integral",
-      name: "Masaje Relajante Integral + Ventosas & TENS",
-      category: "masajes",
-      categoryLabel: "Fisio & Masajes",
-      cabin: "Tda. 2100",
-      defaultStaffId: "stf-carlos",
-      duration: "60 min",
-      price: 50.0,
-      oldPrice: 60.0,
-      promo: "Más Pedido",
-      description: "Masaje descontracturante completo con compresas calientes de semillas, ventosas chinas y electroterapia TENS."
-    },
-    {
-      id: "srv-descarga",
-      name: "Descarga Muscular Deportiva (Ciclistas / Atletas)",
-      category: "masajes",
-      categoryLabel: "Fisio & Masajes",
-      cabin: "Tda. 2100",
-      defaultStaffId: "stf-carlos",
-      duration: "60 min",
-      price: 65.0,
-      oldPrice: 80.0,
-      promo: "Alianza Clubes",
-      description: "Liberación miofascial profunda de piernas y espalda para ciclistas MTB/ruta y corredores. Incluye TENS y compresas."
-    },
-    {
-      id: "srv-quiro",
-      name: "Ajuste Quiropráctico & Terapia Física",
-      category: "masajes",
-      categoryLabel: "Fisio & Masajes",
-      cabin: "Tda. 2013",
-      defaultStaffId: "stf-carlos",
-      duration: "45 min",
-      price: 70.0,
+      id: "srv-reflexologia",
+      name: "Reflexología Podal + Parafina",
+      category: "podologia",
+      categoryLabel: "Podología",
+      cabin: "Tda. 2015",
+      defaultStaffId: "stf-rosario",
+      duration: "40 min",
+      price: 45.0,
       oldPrice: null,
-      promo: "Evaluación Gratis",
-      description: "Corrección vertebral profesional para lumbalgia, cervicalgia, escoliosis y rehabilitación articular post-lesión."
-    },
-    {
-      id: "srv-facial-diamante",
-      name: "Limpieza Facial Profunda + Punta de Diamante & LED",
-      category: "cosmiatria",
-      categoryLabel: "Cosmiatría",
-      cabin: "Tda. 2101",
-      defaultStaffId: "stf-valeria",
-      duration: "60 min",
-      price: 50.0,
-      oldPrice: 70.0,
-      promo: "Promo 2x1 Disp.",
-      description: "Microdermoabrasión con punta de diamante, vapor ozono, extracción, alta frecuencia, máscara LED y velo de colágeno."
+      promo: null,
+      featured: false,
+      description: "Puntos reflejos plantares + baño hidratante de parafina tibia."
     },
     {
       id: "srv-hidro-dermapen",
-      name: "Hidrodermoabrasión + Radiofrecuencia & Colágeno",
+      name: "Hidrodermoabrasión & Colágeno",
       category: "cosmiatria",
       categoryLabel: "Cosmiatría",
       cabin: "Tda. 2101",
@@ -107,24 +142,12 @@ window.SPA_BETTY_SEED = {
       price: 85.0,
       oldPrice: 110.0,
       promo: "Antiedad",
-      description: "Hidratación profunda con tecnología hidrofacial, tensado con radiofrecuencia y renovación celular luminosa."
-    },
-    {
-      id: "srv-pestanas-2x1",
-      name: "Extensiones de Pestañas Pelo a Pelo (Promo 2x1)",
-      category: "mirada",
-      categoryLabel: "Cejas & Pestañas",
-      cabin: "Tda. 3100",
-      defaultStaffId: "stf-andrea",
-      duration: "90 min",
-      price: 120.0,
-      oldPrice: 140.0,
-      promo: "2x1 Activo",
-      description: "Aplicación artesanal efecto natural o volumen para 2 personas (o 2 sesiones). Materiales hipoalergénicos."
+      featured: false,
+      description: "Hidratación hidrofacial profunda, radiofrecuencia y luminosidad."
     },
     {
       id: "srv-lifting",
-      name: "Lifting de Pestañas + Diseño de Cejas con Hilo",
+      name: "Lifting de Pestañas + Cejas Hilo",
       category: "mirada",
       categoryLabel: "Cejas & Pestañas",
       cabin: "Tda. 3100",
@@ -132,12 +155,13 @@ window.SPA_BETTY_SEED = {
       duration: "45 min",
       price: 30.0,
       oldPrice: 45.0,
-      promo: "Super Oferta",
-      description: "Rizado semipermanente de pestañas naturales con nutrición + perfilado de cejas con depilación hindú."
+      promo: "Oferta",
+      featured: false,
+      description: "Rizado natural nutritivo + diseño de cejas con hilo hindú."
     },
     {
       id: "srv-microblading",
-      name: "Microblading / Microshading de Cejas",
+      name: "Microblading / Microshading",
       category: "mirada",
       categoryLabel: "Cejas & Pestañas",
       cabin: "Tda. 3100",
@@ -145,90 +169,78 @@ window.SPA_BETTY_SEED = {
       duration: "90 min",
       price: 100.0,
       oldPrice: 150.0,
-      promo: "Tendencia",
-      description: "Diseño visagismo personalizado pelo a pelo o sombreado suave con pigmentos certificados de larga duración."
-    },
-    {
-      id: "srv-reflexologia",
-      name: "Reflexología Podal + Baño de Parafina",
-      category: "podologia",
-      categoryLabel: "Podología",
-      cabin: "Tda. 2015",
-      defaultStaffId: "stf-rosario",
-      duration: "40 min",
-      price: 45.0,
-      oldPrice: null,
-      promo: "Relax Total",
-      description: "Estimulación de puntos reflejos plantares para aliviar estrés y fatiga + hidratación profunda con parafina tibia."
+      promo: null,
+      featured: false,
+      description: "Diseño visagismo pelo a pelo con pigmentos certificados."
     }
   ],
 
   products: [
     {
       id: "prd-talco-menta",
-      name: "Talco Crema de Menta (150 gr)",
-      category: "Podología en Casa",
+      name: "Talco Crema de Menta · 150g",
+      category: "Podología",
       price: 35.0,
       stock: 18,
       minStock: 6,
       icon: "droplets",
       image: "assets/prod-talco-menta.jpg",
-      description: "Fórmula podológica especializada con terbinafina, óxido de zinc y aloe vera. Frescura y protección antimicótica."
+      description: "Terbinafina, óxido de zinc y aloe vera antimicótico."
     },
     {
       id: "prd-ortesis",
-      name: "Kit Órtesis de Silicona & Separadores",
-      category: "Insumo Podológico",
+      name: "Kit Órtesis de Silicona",
+      category: "Podología",
       price: 28.0,
       stock: 12,
       minStock: 5,
       icon: "shield",
       image: "assets/prod-ortesis.jpg",
-      description: "Alivio ergonómico para dedos en garra, juanetes y fricción diaria. Silicona médica lavable y reutilizable."
+      description: "Separadores médicos lavables para alivio diario."
     },
     {
       id: "prd-aceite-masaje",
-      name: "Aceite Terapéutico Árnica & Eucalipto (250 ml)",
-      category: "Fisioterapia & Relax",
+      name: "Aceite Árnica & Eucalipto · 250ml",
+      category: "Fisioterapia",
       price: 42.0,
       stock: 9,
       minStock: 5,
       icon: "flame",
       image: "assets/prod-aceite-masaje.jpg",
-      description: "Mezcla botánica de rápida absorción ideal para masajes descontracturantes y recuperación post-entreno."
+      description: "Fórmula botánica para descarga muscular y relax."
     },
     {
       id: "prd-serum-facial",
-      name: "Kit Sérum Hialurónico + Velo de Colágeno",
-      category: "Cosmiatría Facial",
+      name: "Kit Sérum Hialurónico + Colágeno",
+      category: "Cosmiatría",
       price: 65.0,
       stock: 4,
       minStock: 5,
       icon: "sparkles",
       image: "assets/prod-serum-facial.jpg",
-      description: "Tratamiento domiciliario post-limpieza facial para mantener luminosidad, elasticidad e hidratación profunda."
+      description: "Hidratación y firmeza domiciliaria post-facial."
     },
     {
       id: "prd-crema-urea",
-      name: "Crema Reparadora Urea 10% (Pie Diabético)",
-      category: "Podología en Casa",
+      name: "Crema Reparadora Urea 10%",
+      category: "Podología",
       price: 38.0,
       stock: 14,
       minStock: 5,
       icon: "heart-pulse",
       image: "assets/prod-crema-urea.jpg",
-      description: "Hidratación clínica intensiva para talones agrietados y piel sensible. Aprobada para cuidado diario."
+      description: "Hidratación intensiva apta para pie diabético."
     },
     {
       id: "prd-compresa",
-      name: "Compresa Térmica de Semillas Aromáticas",
-      category: "Fisioterapia & Relax",
+      name: "Compresa Térmica de Semillas",
+      category: "Fisioterapia",
       price: 45.0,
       stock: 3,
       minStock: 4,
       icon: "sun",
       image: "assets/prod-compresa.jpg",
-      description: "Cojín terapéutico cervical y lumbar con lavanda, manzanilla y eucalipto para termoterapia en casa."
+      description: "Termoterapia cervical y lumbar con lavanda natural."
     }
   ],
 

@@ -3,7 +3,7 @@
 ========================================================= */
 
 (function () {
-  const STORAGE_KEY = "spa_betty_demo_state_v2";
+  const STORAGE_KEY = "spa_betty_demo_state_v3";
 
   const clone = (obj) => JSON.parse(JSON.stringify(obj));
 
@@ -35,7 +35,7 @@
   }
 
   let state = loadState();
-  let activeServiceCat = "all";
+  let activeServiceCat = "featured";
   let activeCrmTab = "dashboard";
   let activeCabinFilter = "all";
   let activeStatusFilter = "all";
@@ -135,31 +135,28 @@
     const list =
       activeServiceCat === "all"
         ? state.services
+        : activeServiceCat === "featured"
+        ? state.services.filter((s) => s.featured)
         : state.services.filter((s) => s.category === activeServiceCat);
 
     grid.innerHTML = list
       .map(
         (srv) => `
       <article class="service-card">
-        <div>
+        <div class="service-card-main">
           <div class="service-card-top">
-            <span class="service-cabin-tag">${srv.cabin} · ${srv.categoryLabel}</span>
+            <span class="service-meta-line">${srv.cabin} · ${srv.duration}</span>
             ${srv.promo ? `<span class="service-badge-promo">${srv.promo}</span>` : ""}
           </div>
           <h3>${srv.name}</h3>
           <p>${srv.description}</p>
-          <div class="service-meta">
-            <span><i data-lucide="clock"></i> ${srv.duration}</span>
-            <span><i data-lucide="shield-check"></i> Confirmación inmediata</span>
-          </div>
         </div>
         <div class="service-card-foot">
           <div class="price-block">
-            ${srv.oldPrice ? `<span class="price-old">${fmtS(srv.oldPrice)}</span>` : ""}
             <span class="price-main">${fmtS(srv.price)}</span>
+            ${srv.oldPrice ? `<span class="price-old">${fmtS(srv.oldPrice)}</span>` : ""}
           </div>
           <button class="btn btn-primary btn-sm" data-book-service="${srv.id}">
-            <i data-lucide="calendar-plus"></i>
             <span>Reservar</span>
           </button>
         </div>
@@ -184,21 +181,25 @@
         <article class="product-card">
           <div class="product-media">
             <img src="${imgSrc}" alt="${prd.name}" loading="lazy" />
-            <span class="product-cat-badge">${prd.category}</span>
-            <span class="stock-pill ${isLow ? "low" : ""}">
-              ${out ? "Agotado" : `${prd.stock} en stock`}
-            </span>
+            ${
+              out
+                ? `<span class="stock-pill low">Agotado</span>`
+                : isLow
+                ? `<span class="stock-pill low">Últimas ${prd.stock}</span>`
+                : ""
+            }
           </div>
           <div class="product-body">
             <div>
+              <span class="product-kicker">${prd.category}</span>
               <h3>${prd.name}</h3>
               <p>${prd.description}</p>
             </div>
             <div class="product-foot">
               <span class="product-price">${fmtS(prd.price)}</span>
               <button class="btn btn-aqua btn-sm" data-add-cart="${prd.id}" ${out ? "disabled" : ""}>
-                <i data-lucide="shopping-bag"></i>
-                <span>${out ? "Sin Stock" : "Añadir"}</span>
+                <i data-lucide="plus"></i>
+                <span>${out ? "Agotado" : "Añadir"}</span>
               </button>
             </div>
           </div>
